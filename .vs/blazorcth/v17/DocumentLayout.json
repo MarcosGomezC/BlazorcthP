@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0CF4852E-2191-4BEB-9540-735C02515BC0}|server\\server.csproj|c:\\users\\cth technology\\source\\repos\\blazorcth\\server\\controllers\\librocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF4852E-2191-4BEB-9540-735C02515BC0}|server\\server.csproj|solutionrelative:server\\controllers\\librocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9A3C10B-9E50-46BA-ABBA-D9AE7042A658}|blazorcth\\blazorcth.csproj|c:\\users\\cth technology\\source\\repos\\blazorcth\\blazorcth\\pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B9A3C10B-9E50-46BA-ABBA-D9AE7042A658}|blazorcth\\blazorcth.csproj|solutionrelative:blazorcth\\pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CF4852E-2191-4BEB-9540-735C02515BC0}|server\\server.csproj|c:\\users\\cth technology\\source\\repos\\blazorcth\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF4852E-2191-4BEB-9540-735C02515BC0}|server\\server.csproj|solutionrelative:server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\server\\Program.cs",
+              "RelativeDocumentMoniker": "server\\Program.cs",
+              "ToolTip": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\server\\Program.cs",
+              "RelativeToolTip": "server\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T13:03:15.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LibroController.cs",
+              "DocumentMoniker": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\server\\Controllers\\LibroController.cs",
+              "RelativeDocumentMoniker": "server\\Controllers\\LibroController.cs",
+              "ToolTip": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\server\\Controllers\\LibroController.cs",
+              "RelativeToolTip": "server\\Controllers\\LibroController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T12:55:34.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Weather.razor",
+              "DocumentMoniker": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\blazorcth\\Pages\\Weather.razor",
+              "RelativeDocumentMoniker": "blazorcth\\Pages\\Weather.razor",
+              "ToolTip": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\blazorcth\\Pages\\Weather.razor",
+              "RelativeToolTip": "blazorcth\\Pages\\Weather.razor",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAACgAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-16T12:33:28.36Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+﻿@page "/Libros"
+@using Shared.DTOS
+@inject HttpClient Http
+
+<PageTitle>Libros</PageTitle>
+
+<h1>Libros</h1>
+
+<p>Esto es una Biblioteca.</p>
+
+@if (libros == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var libros in libros)
+            {
+                <tr>
+
+                    <td>@libros.Nombre</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    public List<Libro_DTO> libros = new List<Libro_DTO>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        libros = await Http.GetFromJsonAsync<List<Libro_DTO>>("api/libro");
+    }
+}
