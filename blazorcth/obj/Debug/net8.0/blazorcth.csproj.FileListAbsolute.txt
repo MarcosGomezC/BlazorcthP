@@ -1044,8 +1044,9 @@ C:\Users\CTH TECHNOLOGY\source\repos\blazorcth\blazorcth\obj\Debug\net8.0\blazor
 C:\Users\CTH TECHNOLOGY\source\repos\blazorcth\blazorcth\obj\Debug\net8.0\refint\blazorcth.dll
 C:\Users\CTH TECHNOLOGY\source\repos\blazorcth\blazorcth\obj\Debug\net8.0\blazorcth.pdb
 C:\Users\CTH TECHNOLOGY\source\repos\blazorcth\blazorcth\obj\Debug\net8.0\ref\blazorcth.dll
-C:\Users\CTH TECHNOLOGY\source\repos\blazorcth\blazorcth\obj\Debug\net8.0\compressed\dpmcc5qjr1-2ths2fhq2x.gz
-C:\Users\CTH TECHNOLOGY\source\repos\blazorcth\blazorcth\obj\Debug\net8.0\compressed\hyu9totyq6-jly6x6pcmg.gz
-C:\Users\CTH TECHNOLOGY\source\repos\blazorcth\blazorcth\obj\Debug\net8.0\compressed\bft8x2sox1-b9tw8hcm0s.gz
-C:\Users\CTH TECHNOLOGY\source\repos\blazorcth\blazorcth\obj\Debug\net8.0\compressed\vxes45btcq-zxnt6zfw0y.gz
-C:\Users\CTH TECHNOLOGY\source\repos\blazorcth\blazorcth\obj\Debug\net8.0\compressed\79xertvylo-ot2eursohk.gz
+C:\Users\CTH TECHNOLOGY\source\repos\blazorcth\blazorcth\obj\Debug\net8.0\blazorcth.sourcelink.json
+C:\Users\CTH TECHNOLOGY\source\repos\blazorcth\blazorcth\obj\Debug\net8.0\compressed\dpmcc5qjr1-b61adhcdqf.gz
+C:\Users\CTH TECHNOLOGY\source\repos\blazorcth\blazorcth\obj\Debug\net8.0\compressed\hyu9totyq6-1tfrzc9m9l.gz
+C:\Users\CTH TECHNOLOGY\source\repos\blazorcth\blazorcth\obj\Debug\net8.0\compressed\bft8x2sox1-l6krs1a5q8.gz
+C:\Users\CTH TECHNOLOGY\source\repos\blazorcth\blazorcth\obj\Debug\net8.0\compressed\vxes45btcq-fddhuzbaex.gz
+C:\Users\CTH TECHNOLOGY\source\repos\blazorcth\blazorcth\obj\Debug\net8.0\compressed\79xertvylo-6lwast7udg.gz

@@ -1,0 +1,61 @@
+﻿@page "/Crear"
+@page "/Crear/{Id:int}"
+@using BlazorCTH.Shared.DTOS
+@inject HttpClient Http
+@inject NavigationManager navegar
+
+<EditForm Model="NuevoAutor">
+    <InputText @bind-Value="NuevoAutor.Nombre">
+
+    </InputText>
+    @if(Id > 0)
+    {
+        <button @onclick="(() => UpdateAutor(NuevoAutor))">Actualizar</button>
+    }
+    else
+    {
+        <button @onclick="(() => CrearAutor(NuevoAutor))">Agregar Autor</button>
+    }
+    
+</EditForm>
+
+
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+    public Autor_DTO NuevoAutor { get; set; } = new Autor_DTO();
+    protected override async Task OnInitializedAsync()
+    {
+        @if(Id > 0)
+        await GetAutores();
+    }
+    public async Task GetAutores()
+    {
+        NuevoAutor = await Http.GetFromJsonAsync<Autor_DTO>($"api/autor/GetAutorLibros/{Id}");
+    }
+    public async Task CrearAutor(Autor_DTO autor)
+    {
+        var response = await Http.PostAsJsonAsync("api/autor/Crear", autor);
+        if (response.IsSuccessStatusCode)
+        {
+            Console.WriteLine("Autor creado");
+            navegar.NavigateTo($"/ListaAutores");
+        }
+        else
+        {
+
+            Console.WriteLine("Error al crear autor");
+        }
+    }
+    
+
+    public async Task UpdateAutor(Autor_DTO autor)
+    {
+        var response = await Http.PutAsJsonAsync<Autor_DTO>($"api/autor/Actualizar/{Id}", autor);
+        navegar.NavigateTo($"/ListaAutores");
+
+    }
+
+
+}

@@ -1,0 +1,15 @@
+C:\Users\CTH TECHNOLOGY\source\repos\BlazorCTH\BlazorCTH\Shared\bin\Debug\net7.0\BlazorCTH.Shared.deps.json
+C:\Users\CTH TECHNOLOGY\source\repos\BlazorCTH\BlazorCTH\Shared\bin\Debug\net7.0\BlazorCTH.Shared.runtimeconfig.json
+C:\Users\CTH TECHNOLOGY\source\repos\BlazorCTH\BlazorCTH\Shared\bin\Debug\net7.0\BlazorCTH.Shared.dll
+C:\Users\CTH TECHNOLOGY\source\repos\BlazorCTH\BlazorCTH\Shared\bin\Debug\net7.0\BlazorCTH.Shared.pdb
+C:\Users\CTH TECHNOLOGY\source\repos\BlazorCTH\BlazorCTH\Shared\obj\Debug\net7.0\BlazorCTH.Shared.csproj.AssemblyReference.cache
+C:\Users\CTH TECHNOLOGY\source\repos\BlazorCTH\BlazorCTH\Shared\obj\Debug\net7.0\BlazorCTH.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CTH TECHNOLOGY\source\repos\BlazorCTH\BlazorCTH\Shared\obj\Debug\net7.0\BlazorCTH.Shared.AssemblyInfoInputs.cache
+C:\Users\CTH TECHNOLOGY\source\repos\BlazorCTH\BlazorCTH\Shared\obj\Debug\net7.0\BlazorCTH.Shared.AssemblyInfo.cs
+C:\Users\CTH TECHNOLOGY\source\repos\BlazorCTH\BlazorCTH\Shared\obj\Debug\net7.0\BlazorCTH.Shared.csproj.CoreCompileInputs.cache
+C:\Users\CTH TECHNOLOGY\source\repos\BlazorCTH\BlazorCTH\Shared\obj\Debug\net7.0\BlazorCTH.Shared.sourcelink.json
+C:\Users\CTH TECHNOLOGY\source\repos\BlazorCTH\BlazorCTH\Shared\obj\Debug\net7.0\BlazorCTH.Shared.dll
+C:\Users\CTH TECHNOLOGY\source\repos\BlazorCTH\BlazorCTH\Shared\obj\Debug\net7.0\refint\BlazorCTH.Shared.dll
+C:\Users\CTH TECHNOLOGY\source\repos\BlazorCTH\BlazorCTH\Shared\obj\Debug\net7.0\BlazorCTH.Shared.pdb
+C:\Users\CTH TECHNOLOGY\source\repos\BlazorCTH\BlazorCTH\Shared\obj\Debug\net7.0\BlazorCTH.Shared.genruntimeconfig.cache
+C:\Users\CTH TECHNOLOGY\source\repos\BlazorCTH\BlazorCTH\Shared\obj\Debug\net7.0\ref\BlazorCTH.Shared.dll

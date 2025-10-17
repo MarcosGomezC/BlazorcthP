@@ -19,3 +19,4 @@ C:\Users\CTH TECHNOLOGY\source\repos\blazorcth\blazorcth\obj\Debug\net8.0\static
 C:\Users\CTH TECHNOLOGY\source\repos\blazorcth\blazorcth\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\CTH TECHNOLOGY\source\repos\blazorcth\blazorcth\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\CTH TECHNOLOGY\source\repos\blazorcth\blazorcth\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\CTH TECHNOLOGY\source\repos\blazorcth\blazorcth\obj\Debug\net8.0\staticwebassets.build.json

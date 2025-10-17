@@ -1,0 +1,21 @@
+﻿@* @page "/Actualizar"
+@using BlazorCTH.Shared.DTOS
+@inject HttpClient Http
+
+<EditForm Model="ActualizarAutor">
+    <InputText @bind-Value="ActualizarAutor.Nombre">
+
+    </InputText>
+    <button @onclick="(() => UpdateAutor(ActualizarAutor))">Agregar Autor</button>
+</EditForm>
+
+
+@code {
+    public Autor_DTO ActualizarAutor { get; set; } = new Autor_DTO();
+    
+    public async Task UpdateAutor(Autor_DTO autor)
+    {
+        var response = await Http.PutAsJsonAsync<List<Autor_DTO>>("api/autor/Actualizar/{Id}",autor);
+    }
+}
+ *@

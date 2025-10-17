@@ -1,0 +1,66 @@
+﻿@page "/ListaAutores"
+@using BlazorCTH.Shared
+@using BlazorCTH.Shared.DTOS
+@using global::Shared.DTOS
+@inject HttpClient Http
+@inject NavigationManager navegar
+
+<PageTitle>Lista de Autores</PageTitle>
+
+<h1>Autores</h1>
+
+<p>Nombre de Autores.</p>
+
+@if (autors == null)
+{
+    <p><em>Loading...</em></p>
+}else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID </th>
+                <th>Nombre</th>
+                <th>Accion</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var libros in autors)
+            {   
+                <tr>
+                    <td>@libros.Id</td>
+                    <td>@libros.Nombre</td>
+                    <td> 
+                        <button class="btn-danger" @onclick="(() => Delete(libros.Id))">Eliminar</button>
+                        <button class="btn-info" style="color:crimson" @onclick="(() => UpdateAutor(libros.Id))" >Acturalizar</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@code {
+
+    public List<Autor_DTO> autors = new List<Autor_DTO>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetAutores();
+    }
+    public async Task GetAutores()
+    {
+        autors = await Http.GetFromJsonAsync<List<Autor_DTO>>("api/autor/GetAutores");
+    }
+    public async Task Delete(int Id)
+    {
+        var autor = await Http.DeleteFromJsonAsync<Autor_DTO>($"api/autor/Borrar/{Id}");
+        await GetAutores();
+        StateHasChanged();
+    }
+
+    public async Task UpdateAutor(int Id)
+    {
+        navegar.NavigateTo($"/Crear/{Id}");
+    }
+}

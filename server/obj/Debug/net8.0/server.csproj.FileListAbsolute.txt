@@ -187,3 +187,4 @@ C:\Users\CTH TECHNOLOGY\source\repos\blazorcth\server\obj\Debug\net8.0\refint\se
 C:\Users\CTH TECHNOLOGY\source\repos\blazorcth\server\obj\Debug\net8.0\server.pdb
 C:\Users\CTH TECHNOLOGY\source\repos\blazorcth\server\obj\Debug\net8.0\server.genruntimeconfig.cache
 C:\Users\CTH TECHNOLOGY\source\repos\blazorcth\server\obj\Debug\net8.0\ref\server.dll
+C:\Users\CTH TECHNOLOGY\source\repos\blazorcth\server\obj\Debug\net8.0\server.sourcelink.json
