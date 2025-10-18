@@ -100,6 +100,32 @@
   },
   {
     "ContainingType": "server.Controllers.LibroController",
+    "Method": "CrearLibros",
+    "RelativePath": "api/Libro/CrearLibros",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "libro",
+        "Type": "Shared.DTOS.Libro_DTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Shared.DTOS.Libro_DTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "server.Controllers.LibroController",
     "Method": "GetLibros",
     "RelativePath": "api/Libro/GetLibros",
     "HttpMethod": "GET",

@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "MKGMGQRT",
+  "version": "lEQxo0fV",
   "assets": [
     {
       "hash": "sha256-aUbNW0kPbD9BYvSQVVF3qBJDJ0t3gnvSkgmuB9rRLEs=",
@@ -14,19 +14,19 @@ self.assetsManifest = {
       "url": "_framework/Azure.Identity.dll"
     },
     {
-      "hash": "sha256-0BktfLbiYsBVrJo5IWiCmwqOq4oflxp35J2dBLf7xg4=",
+      "hash": "sha256-LLqaLtJT7ZgJNfjG9Y1LjGgyzzHAQt23IQ6hXQ0Djc0=",
       "url": "_framework/BlazorCTH.Client.dll"
     },
     {
-      "hash": "sha256-fKyqwzZzsLQCb3+EjP89v7yOhSHkd0lN/Picei1PP0w=",
+      "hash": "sha256-V7mr1kfJjxs9XBbJRfVxLsT5vLBl616awUEnAiADhwM=",
       "url": "_framework/BlazorCTH.Client.pdb"
     },
     {
-      "hash": "sha256-Zp9q3PNAXHfEkEkfpTeaetd+UPqila3BoFnmETFTLCw=",
+      "hash": "sha256-VctOmTLkAjEXvU5N/a3Y3hKf+yBGr+851HXk3UTh0Fk=",
       "url": "_framework/BlazorCTH.Shared.dll"
     },
     {
-      "hash": "sha256-TNLCVqKwDaPvKc6CBoDs10lOYVrNrPe7kAcOCffHyac=",
+      "hash": "sha256-I1YVeU94iuj9/1YwV0tg35qJxpVHhR2RhvlJHsAcJmM=",
       "url": "_framework/BlazorCTH.Shared.pdb"
     },
     {
@@ -910,7 +910,7 @@ self.assetsManifest = {
       "url": "_framework/WindowsBase.dll"
     },
     {
-      "hash": "sha256-aWN4/hegYc0cUhd8/XM08X2yhLaAwTlKMK3aqmPuP0w=",
+      "hash": "sha256-2SGoJLI0gCpPs8V1N7C0ieqW0UCg0XylNtwxiSelHqQ=",
       "url": "_framework/blazor.boot.json"
     },
     {

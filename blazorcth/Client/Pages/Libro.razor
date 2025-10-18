@@ -1,5 +1,6 @@
 ﻿@page "/Libros"
 @using BlazorCTH.Shared
+@using BlazorCTH.Shared.DTOS
 @using global::Shared.DTOS
 @inject HttpClient Http
 
@@ -19,6 +20,9 @@ else
         <thead>
             <tr>
                 <th>Nombre</th>
+                <th>Id Autor</th>
+                <th>Nombre</th>
+
 
             </tr>
         </thead>
@@ -27,6 +31,8 @@ else
             {
                 <tr>
                     <td>@libros.Nombre</td>
+                    <td>@libros.IdAutor</td>
+                    <td>@libros.NombreAutor </td>
                     
                 </tr>
             }
@@ -37,9 +43,15 @@ else
 @code {
     
     public List<Libro_DTO> libros = new List<Libro_DTO>();
+    public List<Autor_DTO> autor = new List<Autor_DTO>();
 
     protected override async Task OnInitializedAsync()
     {
         libros = await Http.GetFromJsonAsync<List<Libro_DTO>>("api/libro/GetLibros");
+        
+    }
+    public async Task GetAutores()
+    {
+        autor = await Http.GetFromJsonAsync<List<Autor_DTO>>("api/autor/GetAutores");
     }
 }

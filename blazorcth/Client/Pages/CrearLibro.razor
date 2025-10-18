@@ -1,0 +1,52 @@
+﻿@page "/CrearLibros"
+@using BlazorCTH.Shared.DTOS
+@using global::Shared.DTOS
+@inject HttpClient Http
+
+<EditForm Model="NuevoLibro">
+    <InputText @bind-Value="NuevoLibro.Nombre">
+
+    </InputText>
+    <InputSelect @bind-Value="NuevoLibro.IdAutor">
+        @foreach(var lista in autors)
+        {
+            <option value="@lista.Id">@lista.Nombre</option>
+        }
+    </InputSelect>
+    <button @onclick="(() => CrearLibros(NuevoLibro))">Crear</button>
+
+</EditForm>
+
+@code {
+    public int IdAutor { get; set; }
+    public Libro_DTO NuevoLibro { get; set; } = new Libro_DTO();
+    public Autor_DTO ListaAutor { get; set; } = new Autor_DTO();
+    public List<Autor_DTO> autors = new List<Autor_DTO>();
+    protected override async Task OnInitializedAsync()
+    {
+        await GetAutores();
+    }
+
+    public async Task GetAutor(Autor_DTO autor)
+    {
+        ListaAutor = await Http.GetFromJsonAsync<Autor_DTO>($"api/autor/GetAutorLibros/{IdAutor}");
+    }
+    public async Task GetAutores()
+    {
+        autors = await Http.GetFromJsonAsync<List<Autor_DTO>>("api/autor/GetAutores");
+    }
+    public async Task CrearLibros(Libro_DTO libro)
+    {
+        var response = await Http.PostAsJsonAsync("api/libro/CrearLibros", libro);
+        if (response.IsSuccessStatusCode)
+        {
+            Console.WriteLine("Autor creado");
+
+        }
+        else
+        {
+
+            Console.WriteLine("Error al crear autor");
+        }
+    }
+}

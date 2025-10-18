@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using server.DAL;
+using server.Modelo;
 using Shared.DTOS;
 
 namespace server.Controllers
@@ -23,6 +24,7 @@ namespace server.Controllers
                new Libro_DTO
                {
                    Nombre = l.Nombre,
+                   IdAutor = l.IdAutor,
                }
                ).ToListAsync();
             if (!libros.Any())
@@ -30,6 +32,21 @@ namespace server.Controllers
                 return BadRequest("No hay Libros");
             }
             return Ok(libros);
+        }
+
+        [HttpPost("CrearLibros")]
+        public async Task<ActionResult<Libro_DTO>> CrearLibros(Libro_DTO libro)
+        {
+            var NuevoLibro = new Libro
+            {
+                Id = libro.Id,
+                Nombre = libro.Nombre,
+                IdAutor = libro.IdAutor,
+            };
+            _db.Libros.Add(NuevoLibro);
+            await _db.SaveChangesAsync();
+            return Ok("Libro Agregado Correctamente");
+
         }
     }
 }

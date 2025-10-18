@@ -84,7 +84,7 @@ namespace BlazorCTH.Server.Controllers
             await _db.SaveChangesAsync();
             return Ok(autor);
         }
-        
-        
+
+               
     }
 }
