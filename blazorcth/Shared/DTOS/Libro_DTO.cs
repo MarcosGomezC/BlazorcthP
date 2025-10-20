@@ -12,6 +12,6 @@ namespace Shared.DTOS
         public string Nombre { get; set; }
 
         public int IdAutor { get; set; } = 0;
-        public string NombreAutor { get; set; }
+        public string NombreAutor { get; set; } = string.Empty;
     }
 }

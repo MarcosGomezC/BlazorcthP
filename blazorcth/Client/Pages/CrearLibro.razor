@@ -40,13 +40,13 @@
         var response = await Http.PostAsJsonAsync("api/libro/CrearLibros", libro);
         if (response.IsSuccessStatusCode)
         {
-            Console.WriteLine("Autor creado");
+            Console.WriteLine("Libro creado");
 
         }
         else
         {
 
-            Console.WriteLine("Error al crear autor");
+            Console.WriteLine("Error al crear Libro");
         }
     }
 }

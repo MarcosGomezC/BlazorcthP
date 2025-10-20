@@ -3,40 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{56907922-236F-46F0-B4D3-D4DC991C2639}|BlazorCTH\\Client\\BlazorCTH.Client.csproj|c:\\users\\cth technology\\source\\repos\\blazorcth\\blazorcth\\client\\pages\\libro.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{56907922-236F-46F0-B4D3-D4DC991C2639}|BlazorCTH\\Client\\BlazorCTH.Client.csproj|solutionrelative:blazorcth\\client\\pages\\libro.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E4D9373D-3C35-490F-8273-5685BAF46C77}|BlazorCTH\\Server\\BlazorCTH.Server.csproj|c:\\users\\cth technology\\source\\repos\\blazorcth\\blazorcth\\server\\controllers\\autorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E4D9373D-3C35-490F-8273-5685BAF46C77}|BlazorCTH\\Server\\BlazorCTH.Server.csproj|solutionrelative:blazorcth\\server\\controllers\\autorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56907922-236F-46F0-B4D3-D4DC991C2639}|BlazorCTH\\Client\\BlazorCTH.Client.csproj|c:\\users\\cth technology\\source\\repos\\blazorcth\\blazorcth\\client\\pages\\crearlibro.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56907922-236F-46F0-B4D3-D4DC991C2639}|BlazorCTH\\Client\\BlazorCTH.Client.csproj|solutionrelative:blazorcth\\client\\pages\\crearlibro.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E4D9373D-3C35-490F-8273-5685BAF46C77}|BlazorCTH\\Server\\BlazorCTH.Server.csproj|c:\\users\\cth technology\\source\\repos\\blazorcth\\blazorcth\\server\\controllers\\librocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E4D9373D-3C35-490F-8273-5685BAF46C77}|BlazorCTH\\Server\\BlazorCTH.Server.csproj|solutionrelative:blazorcth\\server\\controllers\\librocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56907922-236F-46F0-B4D3-D4DC991C2639}|BlazorCTH\\Client\\BlazorCTH.Client.csproj|c:\\users\\cth technology\\source\\repos\\blazorcth\\blazorcth\\client\\pages\\autor.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{56907922-236F-46F0-B4D3-D4DC991C2639}|BlazorCTH\\Client\\BlazorCTH.Client.csproj|solutionrelative:blazorcth\\client\\pages\\autor.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56907922-236F-46F0-B4D3-D4DC991C2639}|BlazorCTH\\Client\\BlazorCTH.Client.csproj|c:\\users\\cth technology\\source\\repos\\blazorcth\\blazorcth\\client\\pages\\listarautores.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{56907922-236F-46F0-B4D3-D4DC991C2639}|BlazorCTH\\Client\\BlazorCTH.Client.csproj|solutionrelative:blazorcth\\client\\pages\\listarautores.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56907922-236F-46F0-B4D3-D4DC991C2639}|BlazorCTH\\Client\\BlazorCTH.Client.csproj|c:\\users\\cth technology\\source\\repos\\blazorcth\\blazorcth\\client\\pages\\crearlibro.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{56907922-236F-46F0-B4D3-D4DC991C2639}|BlazorCTH\\Client\\BlazorCTH.Client.csproj|solutionrelative:blazorcth\\client\\pages\\crearlibro.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{56907922-236F-46F0-B4D3-D4DC991C2639}|BlazorCTH\\Client\\BlazorCTH.Client.csproj|c:\\users\\cth technology\\source\\repos\\blazorcth\\blazorcth\\client\\pages\\libro.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56907922-236F-46F0-B4D3-D4DC991C2639}|BlazorCTH\\Client\\BlazorCTH.Client.csproj|solutionrelative:blazorcth\\client\\pages\\libro.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4C196367-1745-44EC-BA22-29ACFFA30405}|BlazorCTH\\Shared\\BlazorCTH.Shared.csproj|c:\\users\\cth technology\\source\\repos\\blazorcth\\blazorcth\\shared\\dtos\\libro_dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4C196367-1745-44EC-BA22-29ACFFA30405}|BlazorCTH\\Shared\\BlazorCTH.Shared.csproj|solutionrelative:blazorcth\\shared\\dtos\\libro_dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4C196367-1745-44EC-BA22-29ACFFA30405}|BlazorCTH\\Shared\\BlazorCTH.Shared.csproj|c:\\users\\cth technology\\source\\repos\\blazorcth\\blazorcth\\shared\\dtos\\autor_dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C196367-1745-44EC-BA22-29ACFFA30405}|BlazorCTH\\Shared\\BlazorCTH.Shared.csproj|solutionrelative:blazorcth\\shared\\dtos\\autor_dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56907922-236F-46F0-B4D3-D4DC991C2639}|BlazorCTH\\Client\\BlazorCTH.Client.csproj|c:\\users\\cth technology\\source\\repos\\blazorcth\\blazorcth\\client\\pages\\actualizar.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{56907922-236F-46F0-B4D3-D4DC991C2639}|BlazorCTH\\Client\\BlazorCTH.Client.csproj|solutionrelative:blazorcth\\client\\pages\\actualizar.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,123 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Autor_DTO.cs",
-              "DocumentMoniker": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\blazorcth\\Shared\\DTOS\\Autor_DTO.cs",
-              "RelativeDocumentMoniker": "blazorcth\\Shared\\DTOS\\Autor_DTO.cs",
-              "ToolTip": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\blazorcth\\Shared\\DTOS\\Autor_DTO.cs",
-              "RelativeToolTip": "blazorcth\\Shared\\DTOS\\Autor_DTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-18T15:06:23.493Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CrearLibro.razor",
-              "DocumentMoniker": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\blazorcth\\Client\\Pages\\CrearLibro.razor",
-              "RelativeDocumentMoniker": "blazorcth\\Client\\Pages\\CrearLibro.razor",
-              "ToolTip": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\blazorcth\\Client\\Pages\\CrearLibro.razor",
-              "RelativeToolTip": "blazorcth\\Client\\Pages\\CrearLibro.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-18T13:43:46.423Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ListarAutores.razor",
-              "DocumentMoniker": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\blazorcth\\Client\\Pages\\ListarAutores.razor",
-              "RelativeDocumentMoniker": "blazorcth\\Client\\Pages\\ListarAutores.razor",
-              "ToolTip": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\blazorcth\\Client\\Pages\\ListarAutores.razor",
-              "RelativeToolTip": "blazorcth\\Client\\Pages\\ListarAutores.razor",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAADIAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-17T15:45:48.702Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Autor.razor",
-              "DocumentMoniker": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\blazorcth\\Client\\Pages\\Autor.razor",
-              "RelativeDocumentMoniker": "blazorcth\\Client\\Pages\\Autor.razor",
-              "ToolTip": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\blazorcth\\Client\\Pages\\Autor.razor",
-              "RelativeToolTip": "blazorcth\\Client\\Pages\\Autor.razor",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAACAAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-17T19:16:38.511Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LibroController.cs",
-              "DocumentMoniker": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\blazorcth\\Server\\Controllers\\LibroController.cs",
-              "RelativeDocumentMoniker": "blazorcth\\Server\\Controllers\\LibroController.cs",
-              "ToolTip": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\blazorcth\\Server\\Controllers\\LibroController.cs",
-              "RelativeToolTip": "blazorcth\\Server\\Controllers\\LibroController.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAowBsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-18T12:57:24.877Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AutorController.cs",
-              "DocumentMoniker": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\blazorcth\\Server\\Controllers\\AutorController.cs",
-              "RelativeDocumentMoniker": "blazorcth\\Server\\Controllers\\AutorController.cs",
-              "ToolTip": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\blazorcth\\Server\\Controllers\\AutorController.cs",
-              "RelativeToolTip": "blazorcth\\Server\\Controllers\\AutorController.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAowC4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T18:08:11.645Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "Libro_DTO.cs",
               "DocumentMoniker": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\blazorcth\\Shared\\DTOS\\Libro_DTO.cs",
               "RelativeDocumentMoniker": "blazorcth\\Shared\\DTOS\\Libro_DTO.cs",
               "ToolTip": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\blazorcth\\Shared\\DTOS\\Libro_DTO.cs",
               "RelativeToolTip": "blazorcth\\Shared\\DTOS\\Libro_DTO.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-18T13:04:48.311Z",
+              "WhenOpened": "2025-10-20T13:46:53.749Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Libro.razor",
-              "DocumentMoniker": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\blazorcth\\Client\\Pages\\Libro.razor",
-              "RelativeDocumentMoniker": "blazorcth\\Client\\Pages\\Libro.razor",
-              "ToolTip": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\blazorcth\\Client\\Pages\\Libro.razor*",
-              "RelativeToolTip": "blazorcth\\Client\\Pages\\Libro.razor*",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAAACIAAAAmAAAAAAAAAA==",
+              "Title": "CrearLibro.razor",
+              "DocumentMoniker": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\blazorcth\\Client\\Pages\\CrearLibro.razor",
+              "RelativeDocumentMoniker": "blazorcth\\Client\\Pages\\CrearLibro.razor",
+              "ToolTip": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\blazorcth\\Client\\Pages\\CrearLibro.razor*",
+              "RelativeToolTip": "blazorcth\\Client\\Pages\\CrearLibro.razor*",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADAAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-17T15:44:01.417Z",
+              "WhenOpened": "2025-10-20T13:40:22.319Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Actualizar.razor",
-              "DocumentMoniker": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\blazorcth\\Client\\Pages\\Actualizar.razor",
-              "RelativeDocumentMoniker": "blazorcth\\Client\\Pages\\Actualizar.razor",
-              "ToolTip": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\blazorcth\\Client\\Pages\\Actualizar.razor",
-              "RelativeToolTip": "blazorcth\\Client\\Pages\\Actualizar.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAADAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "LibroController.cs",
+              "DocumentMoniker": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\blazorcth\\Server\\Controllers\\LibroController.cs",
+              "RelativeDocumentMoniker": "blazorcth\\Server\\Controllers\\LibroController.cs",
+              "ToolTip": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\blazorcth\\Server\\Controllers\\LibroController.cs",
+              "RelativeToolTip": "blazorcth\\Server\\Controllers\\LibroController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowCcAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T13:40:05.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Libro.razor",
+              "DocumentMoniker": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\blazorcth\\Client\\Pages\\Libro.razor",
+              "RelativeDocumentMoniker": "blazorcth\\Client\\Pages\\Libro.razor",
+              "ToolTip": "C:\\Users\\CTH TECHNOLOGY\\source\\repos\\blazorcth\\blazorcth\\Client\\Pages\\Libro.razor",
+              "RelativeToolTip": "blazorcth\\Client\\Pages\\Libro.razor",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAADoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-17T19:17:28.536Z",
+              "WhenOpened": "2025-10-20T13:40:00.435Z",
               "EditorCaption": ""
             }
           ]

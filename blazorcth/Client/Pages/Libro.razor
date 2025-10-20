@@ -32,23 +32,25 @@ else
                 <tr>
                     <td>@libros.Nombre</td>
                     <td>@libros.IdAutor</td>
-                    <td>@libros.NombreAutor </td>
-                    
+                    <td>@libros.NombreAutor</td>
+
                 </tr>
             }
+            
         </tbody>
     </table>
 }
 
 @code {
-    
+
     public List<Libro_DTO> libros = new List<Libro_DTO>();
     public List<Autor_DTO> autor = new List<Autor_DTO>();
 
     protected override async Task OnInitializedAsync()
     {
         libros = await Http.GetFromJsonAsync<List<Libro_DTO>>("api/libro/GetLibros");
-        
+        await GetAutores();
+
     }
     public async Task GetAutores()
     {

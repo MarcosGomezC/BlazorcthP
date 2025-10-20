@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BlazorCTH.Shared.DTOS;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using server.DAL;
@@ -25,6 +26,7 @@ namespace server.Controllers
                {
                    Nombre = l.Nombre,
                    IdAutor = l.IdAutor,
+                   NombreAutor = _db.Autors.Where(a => a.Id == l.IdAutor).Select(a => a.Nombre).FirstOrDefault()
                }
                ).ToListAsync();
             if (!libros.Any())
@@ -42,6 +44,8 @@ namespace server.Controllers
                 Id = libro.Id,
                 Nombre = libro.Nombre,
                 IdAutor = libro.IdAutor,
+                
+                
             };
             _db.Libros.Add(NuevoLibro);
             await _db.SaveChangesAsync();

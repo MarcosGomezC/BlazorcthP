@@ -31,9 +31,10 @@
                 <tr>
                     <td>@libros.Id</td>
                     <td>@libros.Nombre</td>
+
                     <td> 
                         <button class="btn-danger" @onclick="(() => Delete(libros.Id))">Eliminar</button>
-                        <button class="btn-info" style="color:crimson" @onclick="(() => UpdateAutor(libros.Id))" >Acturalizar</button>
+                        <button class="btn-info" style="color:crimson" @onclick="(() => UpdateAutor(libros.Id))" >Actualizar</button>
                     </td>
                 </tr>
             }
