@@ -21,12 +21,13 @@ namespace server.Controllers
         [HttpGet("GetLibros")]
         public async Task<ActionResult> GetLibros()
         {
-            List<Libro_DTO> libros = await _db.Libros.Select(l =>
+            List<Libro_DTO> libros = await _db.Libros.Where(l=> !string.IsNullOrWhiteSpace(l.UrlPortada)).Select(l =>
                new Libro_DTO
                {
                    Nombre = l.Nombre,
                    IdAutor = l.IdAutor,
-                   NombreAutor = _db.Autors.Where(a => a.Id == l.IdAutor).Select(a => a.Nombre).FirstOrDefault()
+                   NombreAutor = _db.Autors.Where(a => a.Id == l.IdAutor).Select(a => a.Nombre).FirstOrDefault(),
+                   UrlPortada = l.UrlPortada,
                }
                ).ToListAsync();
             if (!libros.Any())
@@ -44,13 +45,14 @@ namespace server.Controllers
                 Id = libro.Id,
                 Nombre = libro.Nombre,
                 IdAutor = libro.IdAutor,
-                
-                
+                UrlPortada = libro.UrlPortada
+
             };
             _db.Libros.Add(NuevoLibro);
             await _db.SaveChangesAsync();
             return Ok("Libro Agregado Correctamente");
 
         }
+
     }
 }

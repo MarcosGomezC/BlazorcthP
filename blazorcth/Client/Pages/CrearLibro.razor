@@ -2,8 +2,9 @@
 @using BlazorCTH.Shared.DTOS
 @using global::Shared.DTOS
 @inject HttpClient Http
+@inject NavigationManager navegar
 
-<EditForm Model="NuevoLibro">
+@* <EditForm Model="NuevoLibro">
     <InputText @bind-Value="NuevoLibro.Nombre">
 
     </InputText>
@@ -15,8 +16,24 @@
     </InputSelect>
     <button @onclick="(() => CrearLibros(NuevoLibro))">Crear</button>
 
-</EditForm>
+</EditForm> *@
+<MudCard style="width:55%" Class="form-control border-1">
+    <MudText Typo="Typo.h5">Crear Libro</MudText>
+     <MudToolBar>
+        <MudTextField @bind-Value="NuevoLibro.Nombre" Label="Nombre del Libro" Variant="Variant.Outlined"  />
+       
+        <MudSelect class="ml-8" @bind-Value="NuevoLibro.IdAutor">
+            <MudSelectItem Value="0">Seleccionar Autor</MudSelectItem>
+            @foreach(var lista in autors)
+            {
+                <MudSelectItem  Value="@lista.Id">@lista.Nombre</MudSelectItem>
+            }
+        </MudSelect>
+        <MudFab Variant="Variant.Filled" OnClick="(() => CrearLibros(NuevoLibro))" Color="Color.Secondary" StartIcon="@Icons.Material.Filled.Add" Size="Size.Medium"></MudFab>
+    </MudToolBar>
+   
 
+ </MudCard>
 @code {
     public int IdAutor { get; set; }
     public Libro_DTO NuevoLibro { get; set; } = new Libro_DTO();
@@ -41,6 +58,7 @@
         if (response.IsSuccessStatusCode)
         {
             Console.WriteLine("Libro creado");
+            navegar.NavigateTo($"/ListaAutores");
 
         }
         else

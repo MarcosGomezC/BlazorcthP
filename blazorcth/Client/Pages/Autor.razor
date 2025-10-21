@@ -4,7 +4,7 @@
 @inject HttpClient Http
 @inject NavigationManager navegar
 
-<EditForm Model="NuevoAutor">
+@* <EditForm Model="NuevoAutor">
     <InputText @bind-Value="NuevoAutor.Nombre">
 
     </InputText>
@@ -19,8 +19,24 @@
     
 </EditForm>
 
+ *@
+ <MudaCard>
+     <MudCardContent>
+        <MudText Typo="Typo.h5">@((Id > 0) ? "Actualizar Autor" : "Crear Autor")</MudText>
+        <MudTextField @bind-Value="NuevoAutor.Nombre" Label="Nombre del Autor" Variant="Variant.Outlined" FullWidth="true" style="width:55%" />
+    </MudCardContent>
+    <MudCardActions>
+        @if (Id > 0)
+        {
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="(() => UpdateAutor(NuevoAutor))">Actualizar</MudButton>
+        }
+        else
+        {
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="(() => CrearAutor(NuevoAutor))" StartIcon="@Icons.Material.Filled.Add">Agregar Autor </MudButton>
+        }
+    </MudCardActions>
 
-
+ </MudaCard>
 @code {
     [Parameter]
     public int Id { get; set; }

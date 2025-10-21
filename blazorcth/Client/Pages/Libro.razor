@@ -4,7 +4,7 @@
 @using global::Shared.DTOS
 @inject HttpClient Http
 
-<PageTitle>Libros</PageTitle>
+@* <PageTitle>Libros</PageTitle>
 
 <h1>Libros</h1>
 
@@ -39,8 +39,49 @@ else
             
         </tbody>
     </table>
-}
+} *@
+@* <MudTable Items="@libros" Hover="true" Breakpoint="Breakpoint.Sm">
+    <HeaderContent>
+        <MudTh>Nombre</MudTh>
+        <MudTh>Nombre Del Autor</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Nombre">@context.Nombre</MudTd>
+        <MudTd DataLabel="NombreAutor">@context.NombreAutor</MudTd>
+        
+       
 
+    </RowTemplate>
+    <PagerContent>
+        <MudTablePager PageSizeOptions="new int[] { 10, 25, 50, 100 }" />
+    </PagerContent>
+</MudTable> *@
+<MudGrid Justify="Justify.FlexStart" Spacing="4">
+    @foreach (var libro in libros)
+    {
+        <MudItem Style="flex: 0 0 16.6%; max-width: 16.6%;">
+            <MudCard Class="rounded-md" Style="height: 450px; width: 100%;">
+                <MudCardHeader>
+                    <CardHeaderAvatar>
+                        <MudAvatar Color="Color.Secondary">I</MudAvatar>
+                    </CardHeaderAvatar>
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.body1">@libro.Nombre</MudText>
+                        <MudText Typo="Typo.body2">@libro.NombreAutor</MudText>
+                    </CardHeaderContent>
+                </MudCardHeader>
+
+                <MudCardMedia Image="@libro.UrlPortada"
+                              Style="width:100%; height:320px; object-fit:cover" />
+
+                <MudCardActions>
+                    <MudIconButton Icon="@Icons.Material.Filled.Favorite" />
+                    <MudIconButton Icon="@Icons.Material.Filled.Share" />
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+    }
+</MudGrid>
 @code {
 
     public List<Libro_DTO> libros = new List<Libro_DTO>();

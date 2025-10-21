@@ -7,5 +7,7 @@
 
         public int IdAutor { get; set; }
 
+        public string? UrlPortada { get; set; }
+
     }
 }
