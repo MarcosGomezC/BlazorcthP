@@ -16,6 +16,10 @@
                            Color="Color.Secondary"
                            OnClick="(() => CrearLibro(NuevoLibro))" />
         </MudItem>
+    <MudToolBar>
+        <MudTextField @bind-Value="buscar" Label="Buscar Libro" Variant="Variant.Outlined" FullWidth="true" style="width:95%" />
+        <MudButton Icon="@Icons.Material.Filled.Search" Variant="Variant.Filled" Color="Color.Primary" OnClick="GetBuscarLibro">Buscar</MudButton>
+    </MudToolBar>
     </MudGrid>
 
 
@@ -46,12 +50,14 @@
             </MudCard>
         </MudItem>
     }
+    
 </MudGrid>
 @code {
 
     public List<Libro_DTO> libros = new List<Libro_DTO>();
     public List<Autor_DTO> autor = new List<Autor_DTO>();
     public Libro_DTO NuevoLibro { get; set; } = new Libro_DTO();
+    public string buscar = "";
 
 
 
@@ -87,5 +93,26 @@
     public void CrearLibro(Libro_DTO libro)
     {
         navegar.NavigateTo($"/CrearLibros");
+    }
+    public async Task GetBuscarLibro()
+    {
+        try
+        {
+            var response = await Http.GetFromJsonAsync<List<Libro_DTO>>($"api/libro/BuscarLibro/{buscar}");
+            if (response.Any())
+            {
+                libros = response;
+            }
+            else
+            {
+                libros = new List<Libro_DTO>();
+            }
+
+        }
+        catch (Exception exception)
+        {
+            Console.WriteLine($"Mensaje error {exception}");
+        }
+        
     }
 }

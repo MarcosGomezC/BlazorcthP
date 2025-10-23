@@ -52,7 +52,7 @@ namespace BlazorCTH.Server.Controllers
         public async Task<List<Autor_DTO>> GetAutor(string Nombre)
         {
             var autores = await _db.Autors
-                .Where(a => a.Nombre.Contains(Nombre))
+                .Where(a => a.Nombre.ToUpper().Contains(Nombre.ToUpper()))
                 .Select(a => new Autor_DTO
                 {
                     Id = a.Id,

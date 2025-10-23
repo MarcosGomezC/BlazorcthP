@@ -16,9 +16,13 @@
                        Color="Color.Secondary"
                        OnClick="(() => CrearAutor(NuevoAutor))" />
     </MudItem>
-
-    <MudTextField @bind-Value="buscar" Label="Nombre del Autor" Variant="Variant.Outlined" FullWidth="true" style="width:55%" />
-    <MudButton Icon="@Icons.Material.Filled.Search" Variant="Variant.Filled" Color="Color.Primary" OnClick="GetBuscarAutores">Buscar</MudButton>
+    
+        <MudToolBar>
+        <MudTextField @bind-Value="buscar" Label="Nombre del Autor" Variant="Variant.Outlined" FullWidth="true" style="width:95%" />
+        <MudButton Icon="@Icons.Material.Filled.Search" Variant="Variant.Filled" Color="Color.Primary" OnClick="GetBuscarAutores">Buscar</MudButton>
+        </MudToolBar>
+   
+   
 </MudGrid>
 
 
@@ -43,7 +47,7 @@
         
     </RowTemplate>
     <PagerContent>
-        <MudTablePager PageSizeOptions="new int[] { 10, 25, 50, 100 }" />
+        <MudTablePager PageSizeOptions="new int[] { 5,10, 25, 50, 100 }" />
     </PagerContent>
 </MudTable>
 
@@ -70,7 +74,23 @@
     }
     public async Task GetBuscarAutores()
     {
-        autors = await Http.GetFromJsonAsync<List<Autor_DTO>>($"api/autor/BuscarAutor/{buscar}");
+        try
+        {
+            var response = await Http.GetFromJsonAsync<List<Autor_DTO>>($"api/autor/BuscarAutor/{buscar}");
+            if (response.Any())
+            {
+                autors = response;
+            }
+            else
+            {
+                autors = new List<Autor_DTO>();
+            }
+
+        }catch(Exception exception)
+        {
+            Console.WriteLine($"Mensaje error {exception}");
+        }
+
         
     }
     public async Task Delete(int Id)

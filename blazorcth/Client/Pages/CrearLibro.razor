@@ -5,11 +5,13 @@
 @inject NavigationManager navegar
 
 
-<MudCard style="width:55%" Class="form-control border-1">
+<MudCard style="width:55%" Class="form-control border-1" >
     <MudText Typo="Typo.h5">Crear Libro</MudText>
-     <MudToolBar>
+    <MudForm >
         <MudTextField @bind-Value="NuevoLibro.Nombre" Label="Nombre del Libro" Variant="Variant.Outlined"  />
-       
+        <MudTextField @bind-Value="NuevoLibro.UrlPortada" Label="Url De La Portada" Variant="Variant.Outlined" />
+      
+        <MudSpacer/>
         <MudSelect class="ml-8" @bind-Value="NuevoLibro.IdAutor">
             <MudSelectItem Value="0">Seleccionar Autor</MudSelectItem>
             @foreach (var lista in autors)
@@ -19,23 +21,28 @@
             </MudSelect>
             @if(IdAutor >0 )
             {
-                <MudFab Variant="Variant.Filled" OnClick="(() => UpdateLibro(NuevoLibro))" Color="Color.Secondary" StartIcon="@Icons.Material.Filled.Add" Size="Size.Medium"></MudFab>
+                <MudCardActions>
+                <MudFab Variant="Variant.Filled" OnClick="(() => UpdateLibro(NuevoLibro))" Color="Color.Secondary" StartIcon="@Icons.Material.Filled.Edit" Size="Size.Medium"></MudFab>
+                </MudCardActions>
             }
             else
             {
+                <MudCardActions>
                 <MudFab Variant="Variant.Filled" OnClick="(() => CrearLibros(NuevoLibro))" Color="Color.Secondary" StartIcon="@Icons.Material.Filled.Add" Size="Size.Medium"></MudFab>
-
+                </MudCardActions>
             }
+            
              
             
         
-    </MudToolBar>
+    </MudForm>
    
 
  </MudCard>
 @code {
     [Parameter]
     public int IdAutor { get; set; }
+    public string UrlPortada { get; set; }
     public Libro_DTO NuevoLibro { get; set; } = new Libro_DTO();
     public Autor_DTO ListaAutor { get; set; } = new Autor_DTO();
     public List<Autor_DTO> autors = new List<Autor_DTO>();
@@ -60,7 +67,7 @@
         if (response.IsSuccessStatusCode)
         {
             Console.WriteLine("Libro creado");
-            navegar.NavigateTo($"/ListaAutores");
+            navegar.NavigateTo($"/Libros");
 
         }
         else
@@ -69,7 +76,7 @@
             Console.WriteLine("Error al crear Libro");
         }
     }
-        public async Task UpdateLibro(Libro_DTO libro)
+    public async Task UpdateLibro(Libro_DTO libro)
         {
             var response = await Http.PutAsJsonAsync<Libro_DTO>($"api/libro/Actualizar/{libro.Id}", libro);
             navegar.NavigateTo($"/Libros");

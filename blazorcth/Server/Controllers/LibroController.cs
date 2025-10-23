@@ -86,5 +86,27 @@ namespace server.Controllers
             return Ok(libro);
         }
 
+        [HttpGet ("BuscarLibro/{busqueda}")]
+        public async Task<List<Libro_DTO>> GetLibro(string busqueda)
+        {
+            var libros = (from l in _db.Libros
+                          join a in _db.Autors on l.IdAutor equals a.Id
+                          where l.Nombre.Contains(busqueda)|| a.Nombre.Contains(busqueda)
+                          select new Libro_DTO
+                          {
+                              Id = l.Id,
+                              Nombre = l.Nombre,
+                              IdAutor = l.IdAutor,
+                              NombreAutor = _db.Autors.Where(a => a.Id == l.IdAutor).Select(a => a.Nombre).FirstOrDefault(),
+                              UrlPortada = l.UrlPortada,
+                          }
+                ).ToList();     
+            return libros;
+        }
+
+        
+
+
+        
     }
 }
