@@ -4,22 +4,7 @@
 @inject HttpClient Http
 @inject NavigationManager navegar
 
-@* <EditForm Model="NuevoAutor">
-    <InputText @bind-Value="NuevoAutor.Nombre">
 
-    </InputText>
-    @if(Id > 0)
-    {
-        <button @onclick="(() => UpdateAutor(NuevoAutor))">Actualizar</button>
-    }
-    else
-    {
-        <button @onclick="(() => CrearAutor(NuevoAutor))">Agregar Autor</button>
-    }
-    
-</EditForm>
-
- *@
  <MudaCard>
      <MudCardContent>
         <MudText Typo="Typo.h5">@((Id > 0) ? "Actualizar Autor" : "Crear Autor")</MudText>

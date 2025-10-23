@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using server.DAL;
 using server.Modelo;
-using Shared.DTOS;
+
 using System.Runtime.CompilerServices;
 
 namespace BlazorCTH.Server.Controllers
@@ -48,6 +48,24 @@ namespace BlazorCTH.Server.Controllers
 
             return Ok(autor);
         }
+        [HttpGet("BuscarAutor/{Nombre}")]      
+        public async Task<List<Autor_DTO>> GetAutor(string Nombre)
+        {
+            var autores = await _db.Autors
+                .Where(a => a.Nombre.Contains(Nombre))
+                .Select(a => new Autor_DTO
+                {
+                    Id = a.Id,
+                    Nombre = a.Nombre
+                })
+                .ToListAsync();
+
+            if (!autores.Any())
+                return new List<Autor_DTO>();
+
+            return autores;
+        }
+
 
         [HttpPost("Crear")]
         public async Task<ActionResult> CreateAutor(Autor_DTO autor)

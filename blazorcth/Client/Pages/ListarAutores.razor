@@ -1,50 +1,33 @@
 ﻿@page "/ListaAutores"
 @using BlazorCTH.Shared
 @using BlazorCTH.Shared.DTOS
-@using global::Shared.DTOS
 @inject HttpClient Http
 @inject NavigationManager navegar
 
-@* <PageTitle>Lista de Autores</PageTitle>
 
-<h1>Autores</h1>
+<MudGrid AlignItems="AlignItems.Center">
+    <MudItem xs="10" Class="d-flex justify-center">
+        <MudText Typo="Typo.h4" Align="Align.Center">Lista de Autores</MudText>
+    </MudItem>
 
-<p>Nombre de Autores.</p>
- *@
-@* @if (autors == null)
-{
-    <p><em>Loading...</em></p>
-}else
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>ID </th>
-                <th>Nombre</th>
-                <th>Accion</th>
+    <MudItem xs="2" Class="d-flex justify-end">
+        <MudIconButton Icon="@Icons.Material.Filled.Add"
+                       Variant="Variant.Filled"
+                       Color="Color.Secondary"
+                       OnClick="(() => CrearAutor(NuevoAutor))" />
+    </MudItem>
 
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var libros in autors)
-            {   
-                <tr>
-                    <td>@libros.Id</td>
-                    <td>@libros.Nombre</td>
-
-                    <td> 
-                        <button class="btn-danger" @onclick="(() => Delete(libros.Id))">Eliminar</button>
-                        <button class="btn-info" style="color:crimson" @onclick="(() => UpdateAutor(libros.Id))" >Actualizar</button>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-} *@
+    <MudTextField @bind-Value="buscar" Label="Nombre del Autor" Variant="Variant.Outlined" FullWidth="true" style="width:55%" />
+    <MudButton Icon="@Icons.Material.Filled.Search" Variant="Variant.Filled" Color="Color.Primary" OnClick="GetBuscarAutores">Buscar</MudButton>
+</MudGrid>
 
 
 
-<MudTable Items="@autors" Hover="true" Breakpoint="Breakpoint.Sm" >
+<br />
+<br />
+
+<MudTable Items="@autors" Hover="true" Breakpoint="Breakpoint.Sm"
+          Class="border-x-4 border-solid mud-border-primary pa-4" Square="true">
     <HeaderContent>
         <MudTh>ID</MudTh>
         <MudTh>Nombre</MudTh>
@@ -72,6 +55,9 @@
     private bool _loading = true;
     public int Id { get; set; }
     public List<Autor_DTO> autors { get; set; } = new List<Autor_DTO>();
+    public Autor_DTO NuevoAutor { get; set; } = new Autor_DTO();
+    public  Autor_DTO BuscarAutor { get; set; } = new Autor_DTO();
+    public string buscar = "";
 
 
     protected override async Task OnInitializedAsync()
@@ -81,6 +67,11 @@
     public async Task GetAutores()
     {
         autors = await Http.GetFromJsonAsync<List<Autor_DTO>>("api/autor/GetAutores");
+    }
+    public async Task GetBuscarAutores()
+    {
+        autors = await Http.GetFromJsonAsync<List<Autor_DTO>>($"api/autor/BuscarAutor/{buscar}");
+        
     }
     public async Task Delete(int Id)
     {
@@ -92,5 +83,9 @@
     public async Task UpdateAutor(int Id)
     {
         navegar.NavigateTo($"/Crear/{Id}");
+    }
+    public async Task CrearAutor(Autor_DTO autor)
+    {
+        navegar.NavigateTo($"/Crear");
     }
 }

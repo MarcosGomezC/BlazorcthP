@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using server.DAL;
 using server.Modelo;
-using Shared.DTOS;
+
 
 namespace server.Controllers
 {
@@ -24,6 +24,7 @@ namespace server.Controllers
             List<Libro_DTO> libros = await _db.Libros.Where(l=> !string.IsNullOrWhiteSpace(l.UrlPortada)).Select(l =>
                new Libro_DTO
                {
+                   Id = l.Id,
                    Nombre = l.Nombre,
                    IdAutor = l.IdAutor,
                    NombreAutor = _db.Autors.Where(a => a.Id == l.IdAutor).Select(a => a.Nombre).FirstOrDefault(),
@@ -36,7 +37,16 @@ namespace server.Controllers
             }
             return Ok(libros);
         }
-
+        [HttpGet("GetLibro/{idLibro}")]
+        public async Task<ActionResult> GetLibro(int idLibro)
+        {
+            var libro = await _db.Libros.FirstOrDefaultAsync(l => l.Id == idLibro);  
+            if (libro == null)
+            {
+                return NotFound("Libro no encontrado");
+            }
+            return Ok(libro);
+        }
         [HttpPost("CrearLibros")]
         public async Task<ActionResult<Libro_DTO>> CrearLibros(Libro_DTO libro)
         {
@@ -52,6 +62,28 @@ namespace server.Controllers
             await _db.SaveChangesAsync();
             return Ok("Libro Agregado Correctamente");
 
+        }
+        [HttpDelete("Borrar/{Id}")]
+        public async Task<ActionResult<List<Libro>>> BorrarLibro(int id)
+        { 
+            var libro =await _db.Libros.FirstOrDefaultAsync(l => l.Id == id);
+            if (libro == null)
+            {
+                return NotFound("Libro no encontrado");
+            }
+            _db.Libros.Remove(libro);
+            await _db.SaveChangesAsync();
+            return Ok(await GetLibros());
+        }
+
+        [HttpPut("Actualizar/{Id}")]
+        public async Task<ActionResult<Libro_DTO>> UpdateLibro(Libro_DTO dto, int Id)
+        {
+            var libro = await _db.Libros.FirstOrDefaultAsync(l => l.Id == Id);
+            libro.Nombre = dto.Nombre;
+            libro.IdAutor = dto.IdAutor;
+            await _db.SaveChangesAsync();
+            return Ok(libro);
         }
 
     }

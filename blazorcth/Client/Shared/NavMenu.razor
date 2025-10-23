@@ -1,4 +1,4 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@* <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">BlazorCTH</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
@@ -15,36 +15,15 @@
             </NavLink>
         </div>
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
             <NavLink class="nav-link" href="Libros">
                 <span class="oi oi-list-rich" aria-hidden="true"></span> Libros
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="Crear">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Crear Autor
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="ListaAutores">
                 <span class="oi oi-list-rich" aria-hidden="true"></span> Lista de Autores
             </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="CrearLibros">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Crear Libros
-            </NavLink>
-        </div>
-
+        </div>      
     </nav>
 </div>
 
@@ -57,4 +36,46 @@
     {
         collapseNavMenu = !collapseNavMenu;
     }
+} *@
+@using MudBlazor
+
+<MudDrawer @bind-Open="_drawerOpen"
+           Anchor="Anchor.Left"
+           Elevation="1"
+           Variant="DrawerVariant.Responsive"
+           Style="background-color:#29B6F6; color:white;"
+           Class="pa-2">
+
+    <MudDrawerHeader>
+        <MudText Typo="Typo.h6">BlazorCTH</MudText>
+    </MudDrawerHeader>
+
+    <MudNavMenu Dense="true">
+        <MudNavLink Href="" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home">
+            Home
+        </MudNavLink>
+
+        <MudNavLink Href="Libros" Icon="@Icons.Material.Filled.MenuBook">
+            Libros
+        </MudNavLink>
+
+        <MudNavLink Href="ListaAutores" Icon="@Icons.Material.Filled.Groups">
+            Lista de Autores
+        </MudNavLink>
+    </MudNavMenu>
+</MudDrawer>
+
+<MudAppBar Elevation="1" Color="Color.Primary">
+    <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" OnClick="ToggleNavMenu" />
+    <MudText Typo="Typo.h6" Class="ml-2">BlazorCTH</MudText>
+</MudAppBar>
+
+@code {
+    private bool _drawerOpen = true;
+
+    private void ToggleNavMenu()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
 }
+

@@ -1,61 +1,25 @@
 ﻿@page "/Libros"
 @using BlazorCTH.Shared
 @using BlazorCTH.Shared.DTOS
-@using global::Shared.DTOS
 @inject HttpClient Http
-
-@* <PageTitle>Libros</PageTitle>
-
-<h1>Libros</h1>
-
-<p>Esto es una Biblioteca.</p>
-
-@if (libros == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Id Autor</th>
-                <th>Nombre</th>
+@inject NavigationManager navegar
 
 
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var libros in libros)
-            {
-                <tr>
-                    <td>@libros.Nombre</td>
-                    <td>@libros.IdAutor</td>
-                    <td>@libros.NombreAutor</td>
+    <MudGrid AlignItems="AlignItems.Center">
+        <MudItem xs="10" Class="d-flex justify-center">
+            <MudText Typo="Typo.h4" Align="Align.Center">Lista de Libros</MudText>
+        </MudItem>
 
-                </tr>
-            }
-            
-        </tbody>
-    </table>
-} *@
-@* <MudTable Items="@libros" Hover="true" Breakpoint="Breakpoint.Sm">
-    <HeaderContent>
-        <MudTh>Nombre</MudTh>
-        <MudTh>Nombre Del Autor</MudTh>
-    </HeaderContent>
-    <RowTemplate>
-        <MudTd DataLabel="Nombre">@context.Nombre</MudTd>
-        <MudTd DataLabel="NombreAutor">@context.NombreAutor</MudTd>
-        
-       
+        <MudItem xs="2" Class="d-flex justify-end">
+            <MudIconButton Icon="@Icons.Material.Filled.Add"
+                           Variant="Variant.Filled"
+                           Color="Color.Secondary"
+                           OnClick="(() => CrearLibro(NuevoLibro))" />
+        </MudItem>
+    </MudGrid>
 
-    </RowTemplate>
-    <PagerContent>
-        <MudTablePager PageSizeOptions="new int[] { 10, 25, 50, 100 }" />
-    </PagerContent>
-</MudTable> *@
+
+
 <MudGrid Justify="Justify.FlexStart" Spacing="4">
     @foreach (var libro in libros)
     {
@@ -75,8 +39,9 @@ else
                               Style="width:100%; height:320px; object-fit:cover" />
 
                 <MudCardActions>
-                    <MudIconButton Icon="@Icons.Material.Filled.Favorite" />
-                    <MudIconButton Icon="@Icons.Material.Filled.Share" />
+                    <MudCheckBox @bind-Value="libro.Seleccionado" Color="Color.Secondary" CheckedIcon="@Icons.Material.Filled.Favorite" UncheckedIcon="@Icons.Material.Filled.FavoriteBorder"></MudCheckBox>
+                    <MudIconButton OnClick="(() => Delete(libro.Id))" Icon="@Icons.Material.Filled.Delete" />
+                    <MudIconButton OnClick="(() => UpdateLibro(libro.Id))" Icon="@Icons.Material.Filled.Edit" />
                 </MudCardActions>
             </MudCard>
         </MudItem>
@@ -86,6 +51,9 @@ else
 
     public List<Libro_DTO> libros = new List<Libro_DTO>();
     public List<Autor_DTO> autor = new List<Autor_DTO>();
+    public Libro_DTO NuevoLibro { get; set; } = new Libro_DTO();
+
+
 
     protected override async Task OnInitializedAsync()
     {
@@ -96,5 +64,28 @@ else
     public async Task GetAutores()
     {
         autor = await Http.GetFromJsonAsync<List<Autor_DTO>>("api/autor/GetAutores");
+    }
+    public async Task Delete(int Id)
+    {
+        var response = await Http.DeleteAsync($"api/libro/Borrar/{Id}");
+        if (response.IsSuccessStatusCode)
+        {
+            libros.RemoveAll(l => l.Id == Id);
+            StateHasChanged();
+        }
+        else
+        {
+            Console.WriteLine("Error al eliminar el libro");
+        }
+
+    }
+    public async Task UpdateLibro(int Id)
+    {
+
+        navegar.NavigateTo($"/CrearLibros/{Id}");
+    }
+    public void CrearLibro(Libro_DTO libro)
+    {
+        navegar.NavigateTo($"/CrearLibros");
     }
 }

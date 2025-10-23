@@ -1,22 +1,10 @@
 ﻿@page "/CrearLibros"
+@page "/CrearLibros/{IdAutor:int}"
 @using BlazorCTH.Shared.DTOS
-@using global::Shared.DTOS
 @inject HttpClient Http
 @inject NavigationManager navegar
 
-@* <EditForm Model="NuevoLibro">
-    <InputText @bind-Value="NuevoLibro.Nombre">
 
-    </InputText>
-    <InputSelect @bind-Value="NuevoLibro.IdAutor">
-        @foreach(var lista in autors)
-        {
-            <option value="@lista.Id">@lista.Nombre</option>
-        }
-    </InputSelect>
-    <button @onclick="(() => CrearLibros(NuevoLibro))">Crear</button>
-
-</EditForm> *@
 <MudCard style="width:55%" Class="form-control border-1">
     <MudText Typo="Typo.h5">Crear Libro</MudText>
      <MudToolBar>
@@ -24,29 +12,43 @@
        
         <MudSelect class="ml-8" @bind-Value="NuevoLibro.IdAutor">
             <MudSelectItem Value="0">Seleccionar Autor</MudSelectItem>
-            @foreach(var lista in autors)
+            @foreach (var lista in autors)
             {
-                <MudSelectItem  Value="@lista.Id">@lista.Nombre</MudSelectItem>
+                <MudSelectItem Value="@lista.Id">@lista.Nombre</MudSelectItem>
             }
-        </MudSelect>
-        <MudFab Variant="Variant.Filled" OnClick="(() => CrearLibros(NuevoLibro))" Color="Color.Secondary" StartIcon="@Icons.Material.Filled.Add" Size="Size.Medium"></MudFab>
+            </MudSelect>
+            @if(IdAutor >0 )
+            {
+                <MudFab Variant="Variant.Filled" OnClick="(() => UpdateLibro(NuevoLibro))" Color="Color.Secondary" StartIcon="@Icons.Material.Filled.Add" Size="Size.Medium"></MudFab>
+            }
+            else
+            {
+                <MudFab Variant="Variant.Filled" OnClick="(() => CrearLibros(NuevoLibro))" Color="Color.Secondary" StartIcon="@Icons.Material.Filled.Add" Size="Size.Medium"></MudFab>
+
+            }
+             
+            
+        
     </MudToolBar>
    
 
  </MudCard>
 @code {
+    [Parameter]
     public int IdAutor { get; set; }
     public Libro_DTO NuevoLibro { get; set; } = new Libro_DTO();
     public Autor_DTO ListaAutor { get; set; } = new Autor_DTO();
     public List<Autor_DTO> autors = new List<Autor_DTO>();
     protected override async Task OnInitializedAsync()
     {
+        if (IdAutor > 0)
+        { await GetAutor(IdAutor); }
         await GetAutores();
     }
 
-    public async Task GetAutor(Autor_DTO autor)
+    public async Task GetAutor(int idLibro)
     {
-        ListaAutor = await Http.GetFromJsonAsync<Autor_DTO>($"api/autor/GetAutorLibros/{IdAutor}");
+        NuevoLibro = await Http.GetFromJsonAsync<Libro_DTO>($"api/libro/GetLibro/{idLibro}");
     }
     public async Task GetAutores()
     {
@@ -67,4 +69,9 @@
             Console.WriteLine("Error al crear Libro");
         }
     }
-}
+        public async Task UpdateLibro(Libro_DTO libro)
+        {
+            var response = await Http.PutAsJsonAsync<Libro_DTO>($"api/libro/Actualizar/{libro.Id}", libro);
+            navegar.NavigateTo($"/Libros");
+        }
+    }
