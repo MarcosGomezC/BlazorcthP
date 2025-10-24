@@ -6,13 +6,13 @@
 @inject NavigationManager navegar
 
 
-<MudCard Style="width:100%" >
+<MudCard Style="width:100%">
     <MudItem xs="10" Class="d-flex justify-center">
         <MudText Typo="Typo.h4" Align="Align.Center">Detalles del Libro</MudText>
     </MudItem>
-        <MudText  Typo="Typo.h5">@DetallesLibro.Nombre </MudText>
-        <MudText Typo="Typo.subtitle2">@DetallesLibro.NombreAutor</MudText>
-   
+    <MudText Typo="Typo.h5">@DetallesLibro.Nombre </MudText>
+    <MudText Typo="Typo.subtitle2">@DetallesLibro.NombreAutor</MudText>
+
     <MudCardMedia Image="@DetallesLibro.UrlPortada"
                   Style="width:20%; height:400px; object-fit:cover; border-radius:30px;" />
     <MudCardContent>
