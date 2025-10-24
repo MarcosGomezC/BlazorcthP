@@ -16,5 +16,7 @@ namespace BlazorCTH.Shared.DTOS
 
         public string UrlPortada { get; set; } = string.Empty;
         public bool Seleccionado { get; set; } = false;
+
+        public string Descripcion { get; set; } = string.Empty;
     }
 }

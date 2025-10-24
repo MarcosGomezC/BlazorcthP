@@ -5,22 +5,22 @@
 @inject NavigationManager navegar
 
 
-    <MudGrid AlignItems="AlignItems.Center">
-        <MudItem xs="10" Class="d-flex justify-center">
-            <MudText Typo="Typo.h4" Align="Align.Center">Lista de Libros</MudText>
-        </MudItem>
+<MudGrid AlignItems="AlignItems.Center">
+    <MudItem xs="10" Class="d-flex justify-center">
+        <MudText Typo="Typo.h4" Align="Align.Center">Lista de Libros</MudText>
+    </MudItem>
 
-        <MudItem xs="2" Class="d-flex justify-end">
-            <MudIconButton Icon="@Icons.Material.Filled.Add"
-                           Variant="Variant.Filled"
-                           Color="Color.Secondary"
-                           OnClick="(() => CrearLibro(NuevoLibro))" />
-        </MudItem>
+    <MudItem xs="2" Class="d-flex justify-end">
+        <MudIconButton Icon="@Icons.Material.Filled.Add"
+                       Variant="Variant.Filled"
+                       Color="Color.Secondary"
+                       OnClick="(() => CrearLibro(NuevoLibro))" />
+    </MudItem>
     <MudToolBar>
         <MudTextField @bind-Value="buscar" Label="Buscar Libro" Variant="Variant.Outlined" FullWidth="true" style="width:95%" />
         <MudButton Icon="@Icons.Material.Filled.Search" Variant="Variant.Filled" Color="Color.Primary" OnClick="GetBuscarLibro">Buscar</MudButton>
     </MudToolBar>
-    </MudGrid>
+</MudGrid>
 
 
 
@@ -39,7 +39,7 @@
                     </CardHeaderContent>
                 </MudCardHeader>
 
-                <MudCardMedia Image="@libro.UrlPortada"
+                <MudCardMedia @onclick="(() => IrDetalles(libro.Id))" Image="@libro.UrlPortada"
                               Style="width:100%; height:320px; object-fit:cover" />
 
                 <MudCardActions>
@@ -50,7 +50,7 @@
             </MudCard>
         </MudItem>
     }
-    
+
 </MudGrid>
 @code {
 
@@ -94,6 +94,10 @@
     {
         navegar.NavigateTo($"/CrearLibros");
     }
+    public async Task IrDetalles(int id)
+    {
+        navegar.NavigateTo($"/descripcionlibro/{id}");
+    }
     public async Task GetBuscarLibro()
     {
         try
@@ -113,6 +117,6 @@
         {
             Console.WriteLine($"Mensaje error {exception}");
         }
-        
+
     }
 }

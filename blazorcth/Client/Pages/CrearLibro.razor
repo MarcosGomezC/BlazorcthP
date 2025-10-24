@@ -10,9 +10,10 @@
     <MudForm >
         <MudTextField @bind-Value="NuevoLibro.Nombre" Label="Nombre del Libro" Variant="Variant.Outlined"  />
         <MudTextField @bind-Value="NuevoLibro.UrlPortada" Label="Url De La Portada" Variant="Variant.Outlined" />
+        <MudTextField @bind-Value="NuevoLibro.Descripcion" Label="Descripcion" Lines="3" MaxLines="50"/> 
       
-        <MudSpacer/>
-        <MudSelect class="ml-8" @bind-Value="NuevoLibro.IdAutor">
+       
+        <MudSelect  @bind-Value="NuevoLibro.IdAutor">
             <MudSelectItem Value="0">Seleccionar Autor</MudSelectItem>
             @foreach (var lista in autors)
             {
@@ -28,7 +29,7 @@
             else
             {
                 <MudCardActions>
-                <MudFab Variant="Variant.Filled" OnClick="(() => CrearLibros(NuevoLibro))" Color="Color.Secondary" StartIcon="@Icons.Material.Filled.Add" Size="Size.Medium"></MudFab>
+                <MudFab Variant="Variant.Filled" OnClick="(() => CrearLibros(NuevoLibro))" Color="Color.Secondary" StartIcon="@Icons.Material.Filled.Add" Size="Size.Small"></MudFab>
                 </MudCardActions>
             }
             

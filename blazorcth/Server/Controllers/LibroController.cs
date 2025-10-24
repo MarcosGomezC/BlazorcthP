@@ -29,6 +29,7 @@ namespace server.Controllers
                    IdAutor = l.IdAutor,
                    NombreAutor = _db.Autors.Where(a => a.Id == l.IdAutor).Select(a => a.Nombre).FirstOrDefault(),
                    UrlPortada = l.UrlPortada,
+                   Descripcion = l.Descripcion
                }
                ).ToListAsync();
             if (!libros.Any())
@@ -40,12 +41,22 @@ namespace server.Controllers
         [HttpGet("GetLibro/{idLibro}")]
         public async Task<ActionResult> GetLibro(int idLibro)
         {
-            var libro = await _db.Libros.FirstOrDefaultAsync(l => l.Id == idLibro);  
-            if (libro == null)
+            Libro_DTO libros = await _db.Libros.Where(l => !string.IsNullOrWhiteSpace(l.UrlPortada)&& l.Id == idLibro).Select(l =>
+               new Libro_DTO
+               {
+                   Id = l.Id,
+                   Nombre = l.Nombre,
+                   IdAutor = l.IdAutor,
+                   NombreAutor = _db.Autors.Where(a => a.Id == l.IdAutor).Select(a => a.Nombre).FirstOrDefault(),
+                   UrlPortada = l.UrlPortada,
+                   Descripcion = l.Descripcion
+               }
+               ).FirstOrDefaultAsync();
+            if (libros.Id == 0)
             {
-                return NotFound("Libro no encontrado");
+                return BadRequest("No hay Libros");
             }
-            return Ok(libro);
+            return Ok(libros);
         }
         [HttpPost("CrearLibros")]
         public async Task<ActionResult<Libro_DTO>> CrearLibros(Libro_DTO libro)
@@ -55,7 +66,9 @@ namespace server.Controllers
                 Id = libro.Id,
                 Nombre = libro.Nombre,
                 IdAutor = libro.IdAutor,
-                UrlPortada = libro.UrlPortada
+                UrlPortada = libro.UrlPortada,
+                Descripcion = libro.Descripcion,
+                
 
             };
             _db.Libros.Add(NuevoLibro);
@@ -82,6 +95,7 @@ namespace server.Controllers
             var libro = await _db.Libros.FirstOrDefaultAsync(l => l.Id == Id);
             libro.Nombre = dto.Nombre;
             libro.IdAutor = dto.IdAutor;
+            libro.Descripcion = dto.Descripcion;
             await _db.SaveChangesAsync();
             return Ok(libro);
         }
@@ -99,6 +113,7 @@ namespace server.Controllers
                               IdAutor = l.IdAutor,
                               NombreAutor = _db.Autors.Where(a => a.Id == l.IdAutor).Select(a => a.Nombre).FirstOrDefault(),
                               UrlPortada = l.UrlPortada,
+                              Descripcion = l.Descripcion
                           }
                 ).ToList();     
             return libros;
